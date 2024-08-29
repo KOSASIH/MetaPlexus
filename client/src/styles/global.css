@@ -1,0 +1,68 @@
+/* Import fonts and normalize CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'normalize.css';
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+/* MetaPlexus theme */
+.metaplexus-theme {
+  --primary-color: #337ab7;
+  --secondary-color: #f7f7f7;
+  --accent-color: #ff69b4;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+}
+
+.metaplexus-theme .header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+.metaplexus-theme .footer {
+  background-color: var(--secondary-color);
+  color: #333;
+  padding: 1em;
+  text-align: center;
+}
