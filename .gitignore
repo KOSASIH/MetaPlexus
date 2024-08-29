@@ -11,3 +11,29 @@
 
 pkg/
 src/
+
+# Ignore files and directories for MetaPlexus
+
+# Node.js modules
+node_modules/
+
+# Build files
+build/
+dist/
+
+# Environment files
+.env
+
+# Logs
+logs/
+
+# Coverage files
+coverage/
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
