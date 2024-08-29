@@ -1,0 +1,32 @@
+{
+  "name": "metaplexus",
+  "version": "1.0.0",
+  "description": "Next-Gen Metaverse Infrastructure for Pi Network",
+  "main": "server/src/app.js",
+  "scripts": {
+    "start": "node server/src/app.js",
+    "dev": "nodemon server/src/app.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "deploy": "node scripts/deploy.js"
+  },
+  "keywords": [],
+  "author": "KOSASIH",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.15",
+    "eslint": "^7.32.0",
+    "solidity-compiler": "^0.8.10",
+    "web3": "^1.5.2",
+    "pi-network-sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
