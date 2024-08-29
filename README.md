@@ -15,8 +15,6 @@ Features
 * Easy-to-use APIs and SDKs for developers
 * Modular architecture for easy maintenance and updates
 
-...
-
 Getting Started
 ---------------
 
