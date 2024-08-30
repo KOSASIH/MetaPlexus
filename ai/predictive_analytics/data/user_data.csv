@@ -1,0 +1,12 @@
+user_id,session_duration,pages_visited,time_spent,device_type,browser_type,target
+1,30,5,10,Desktop,Chrome,1
+2,20,3,8,Mobile,Safari,0
+3,45,7,15,Desktop,Firefox,1
+4,10,2,5,Mobile,Chrome,0
+5,60,10,20,Desktop,Edge,1
+6,25,4,12,Mobile,Safari,0
+7,35,6,18,Desktop,Firefox,1
+8,15,3,9,Mobile,Chrome,0
+9,50,8,22,Desktop,Edge,1
+10,40,7,19,Desktop,Firefox,1
+...
