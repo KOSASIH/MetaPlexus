@@ -42,4 +42,4 @@ The AI-driven content generation component uses machine learning algorithms to g
 Contributions are welcome! If you'd like to contribute to the project, please fork the repository and submit a pull request.
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the Apache 2.0 License. See the `LICENSE` file for details.
