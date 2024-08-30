@@ -1,0 +1,10 @@
+transformers==4.12.5
+torch==1.12.1
+torchvision==0.13.1
+numpy==1.23.2
+pandas==1.4.2
+scikit-learn==1.1.2
+matplotlib==3.5.3
+seaborn==0.11.2
+nltk==3.7
+spacy==3.4.1
