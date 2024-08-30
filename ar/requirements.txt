@@ -1,0 +1,8 @@
+opencv-python==4.6.0.66
+pyOpenGL==3.1.5
+PyOpenGL-accelerate==3.1.5
+numpy==1.23.2
+pandas==1.4.2
+scikit-learn==1.1.2
+matplotlib==3.5.3
+seaborn==0.11.2
