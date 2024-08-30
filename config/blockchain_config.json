@@ -1,0 +1,41 @@
+**blockchain_config.json**
+```json
+{
+  "rpc_url": "https://mainnet.infura.io/v3/YOUR_PROJECT_ID",
+  "contract_abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_user_id",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "reward_user",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "private_key_path": "private_key.pem",
+  "contract_address": "0x...contract_address..."
+}
