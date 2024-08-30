@@ -1,5 +1,5 @@
 transformers==4.12.5
-torch==1.12.1
+torch==2.2.0
 torchvision==0.13.1
 numpy==1.23.2
 pandas==1.4.2
