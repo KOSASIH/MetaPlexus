@@ -1,0 +1,15 @@
+{
+  "name": "meta-plexus-cross-chain-atomic-swaps",
+  "version": "1.0.0",
+  "description": "MetaPlexus Cross-Chain Atomic Swaps",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "KOSASIH",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "web3": "^1.3.4"
+  }
+}
