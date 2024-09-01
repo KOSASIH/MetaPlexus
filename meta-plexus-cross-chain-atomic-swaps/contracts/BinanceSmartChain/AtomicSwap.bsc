@@ -1,20 +1,52 @@
 pragma solidity ^0.8.0;
 
-import "https://github.com/binance-chain/bsc-erc20/blob/master/contracts/IERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/token/ERC20/SafeERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/utils/ReentrancyGuard.sol";
 
-contract AtomicSwap {
+contract AtomicSwap is ReentrancyGuard {
     address public owner;
     mapping (address => mapping (address => uint256)) public balances;
+    mapping (address => mapping (address => uint256)) public lockedBalances;
+    mapping (address => uint256) public tokenWhitelist;
 
     constructor() public {
         owner = msg.sender;
     }
 
-    function swap(address _tokenA, address _tokenB, uint256 _amountA, uint256 _amountB) public {
-        // implement atomic swap logic here
+    function addTokenToWhitelist(address _token) public onlyOwner {
+        tokenWhitelist[_token] = 1;
     }
 
+    function removeTokenFromWhitelist(address _token) public onlyOwner {
+        tokenWhitelist[_token] = 0;
+    }
+
+    function swap(address _tokenA, address _tokenB, uint256 _amountA, uint256 _amountB) public nonReentrant {
+        require(tokenWhitelist[_tokenA] == 1 && tokenWhitelist[_tokenB] == 1, "Token not whitelisted");
+        require(balances[_tokenA][msg.sender] >= _amountA, "Insufficient balance");
+        require(balances[_tokenB][msg.sender] >= _amountB, "Insufficient balance");
+
+        lockedBalances[_tokenA][msg.sender] += _amountA;
+        lockedBalances[_tokenB][msg.sender] += _amountB;
+
+        // Perform swap logic here
+        // ...
+
+        lockedBalances[_tokenA][msg.sender] -= _amountA;
+        lockedBalances[_tokenB][msg.sender] -= _amountB;
+
+        balances[_tokenA][msg.sender] -= _amountA;
+        balances[_tokenB][msg.sender] -= _amountB;
+
+        emit Swap(_tokenA, _tokenB, _amountA, _amountB, msg.sender);
+    }
     function getBalance(address _token, address _user) public view returns (uint256) {
         return balances[_token][_user];
     }
+
+    function getLockedBalance(address _token, address _user) public view returns (uint256) {
+        return lockedBalances[_token][_user];
+    }
+
+    event Swap(address indexed tokenA, address indexed tokenB, uint256 amountA, uint256 amountB, address indexed user);
 }
