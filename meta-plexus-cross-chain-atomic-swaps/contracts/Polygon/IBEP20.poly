@@ -1,0 +1,95 @@
+pragma solidity ^0.8.0;
+
+interface IBEP20 {
+    /**
+     * @dev Returns the name of the token.
+     */
+    function name() external view returns (string memory);
+
+    /**
+     * @dev Returns the symbol of the token.
+     */
+    function symbol() external view returns (string memory);
+
+    /**
+     * @dev Returns the decimals of the token.
+     */
+    function decimals() external view returns (uint8);
+
+    /**
+     * @dev Returns the total supply of the token.
+     */
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the balance of the specified address.
+     * @param owner The address to query the balance of.
+     * @return The balance of the specified address.
+     */
+    function balanceOf(address owner) external view returns (uint256);
+
+    /**
+     * @dev Returns the allowance of the specified owner and spender.
+     * @param owner The address of the owner.
+     * @param spender The address of the spender.
+     * @return The allowance of the specified owner and spender.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+
+    /**
+     * @dev Transfers the specified amount of tokens to the specified recipient.
+     * @param recipient The address to transfer the tokens to.
+     * @param amount The amount of tokens to transfer.
+     * @return A boolean indicating whether the transfer was successful.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Approves the specified spender to spend the specified amount of tokens.
+     * @param spender The address of the spender.
+     * @param amount The amount of tokens to approve.
+     * @return A boolean indicating whether the approval was successful.
+     */
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Transfers the specified amount of tokens from the specified sender to the specified recipient.
+     * @param sender The address of the sender.
+     * @param recipient The address of the recipient.
+     * @param amount The amount of tokens to transfer.
+     * @return A boolean indicating whether the transfer was successful.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Increases the allowance of the specified spender by the specified amount.
+     * @param spender The address of the spender.
+     * @param addedValue The amount to increase the allowance by.
+     * @return A boolean indicating whether the increase was successful.
+     */
+    function increaseAllowance(address spender, uint256 addedValue) external returns (bool);
+
+    /**
+     * @dev Decreases the allowance of the specified spender by the specified amount.
+     * @param spender The address of the spender.
+     * @param subtractedValue The amount to decrease the allowance by.
+     * @return A boolean indicating whether the decrease was successful.
+     */
+    function decreaseAllowance(address spender, uint256 subtractedValue) external returns (bool);
+
+    /**
+     * @dev Emitted when tokens are transferred.
+     * @param from The address that the tokens were transferred from.
+     * @param to The address that the tokens were transferred to.
+     * @param value The amount of tokens that were transferred.
+     */
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    /**
+     * @dev Emitted when an approval is made.
+     * @param owner The address of the owner.
+     * @param spender The address of the spender.
+     * @param value The amount of tokens that were approved.
+     */
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+}
